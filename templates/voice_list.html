@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/voice_list.css') }}">
+    <title>Our Voice List</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Voice AI Converter</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('voice_list') }}">Voice List</a></li>
+                <li><a href="{{ url_for('text2speech') }}">Text 2 Voice</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+
+            </ul>
+        </div>
+    </nav>
+    <h1>Voice List</h1>
+    <ul>
+        {% for voice in voices['voices'] %}
+        <li>
+            <strong>Name:</strong> {{ voice.name }}<br>
+            <strong>Accent:</strong> {{ voice.labels.accent }}<br>
+            <strong>Age:</strong> {{ voice.labels.age }}<br>
+            <strong>Gender:</strong> {{ voice.labels.gender }}<br>
+            <strong>Preview URL:</strong> <a href="{{ voice.preview_url }}" target="_blank">Listen</a>
+        </li><br>
+        {% endfor %}
+    </ul>
+    <footer>
+        <div class="container">
+            <p>© 2024 amilia agata & yoan nindita. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

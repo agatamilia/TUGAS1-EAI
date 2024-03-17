@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Voice AI Converter</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('voice_list') }}">Voice List</a></li>
+                <li><a href="{{ url_for('text2speech') }}">Text 2 Voice</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="background"></div>
+<br>
+    </div>
+    <div class="content">
+        <br>
+        <h1>API Voice Converter Task 1 EAI</h1>
+        <p>create by Amilia Agata & Yoan Nindita P</p>
+        <img src="{{ url_for('static', filename='styles/MY.jpg') }}" alt="MiliaYoan" class="image">
+        <p>Hellow! welcome to our API. My name is Amilia Agata, and I'm joined by my colleague Yoan Nindita. 
+        Together, we've embarked on Task 1 in EAI (Enterprise Application Integration), focusing on the API Text Converter to Voice. 
+        Our project aims to seamlessly convert text-based data into synthesized voice output, utilizing the capabilities of modern AI technologies. Our dedication and collaborative efforts have been focused on developing a solution that bridges the gap between textual information and auditory perception, offering accessibility and convenience to users across various platforms and applications.
+
+        Explore our three main services available on this page: Firstly, 'Voice List', where you can discover the available voices for conversion; 
+        secondly, 'Text to Voice', allowing you to convert your text into speech; and finally, 'About Us', to learn more about the minds behind 
+        this project.</p><br>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 amilia agata & yoan nindita. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

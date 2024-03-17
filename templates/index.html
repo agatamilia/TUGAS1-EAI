@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <br>
+            <a href="#" class="logo">Voice AI Converter</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('voice_list') }}">Voice List</a></li>
+                <li><a href="{{ url_for('text2speech') }}">Text 2 Voice</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="background"></div>
+
+    <div class="container">
+        <h1>Tugas 1 EAI <br>API AI Voice</h1>
+        <div class="boxes">
+            <div class="box" id="service1">
+                <h2>Our Voice List</h2>
+            </div>
+            <div class="box" id="service2">
+                <h2>Text to Speech</h2>
+            </div>
+            <div class="box" id="service3">
+                <h2>Service 3</h2>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <br>
+        <p>Hellow! welcome to our API. My name is Amilia Agata, and I'm joined by my colleague Yoan Nindita. 
+        Together, we've embarked on Task 1 in EAI (Enterprise Application Integration), focusing on the API Text Converter to Voice. 
+        Our project aims to seamlessly convert text-based data into synthesized voice output, utilizing the capabilities of modern AI technologies. Our dedication and collaborative efforts have been focused on developing a solution that bridges the gap between textual information and auditory perception, offering accessibility and convenience to users across various platforms and applications.
+
+        Explore our three main services available on this page: Firstly, 'Voice List', where you can discover the available voices for conversion; 
+        secondly, 'Text to Voice', allowing you to convert your text into speech; and finally, 'About Us', to learn more about the minds behind 
+        this project.</p><br>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 amilia agata & yoan nindita. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Menangani event onclick untuk Service 1
+        document.getElementById('service1').onclick = function() {
+            window.location.href = "{{ url_for('voice_list') }}";
+        };
+
+        // Menangani event onclick untuk Service 2
+        document.getElementById('service2').onclick = function() {
+            window.location.href = "{{ url_for('text2speech') }}";
+        };
+
+        // Menangani event onclick untuk Service 3
+        document.getElementById('service3').onclick = function() {
+            // Tambahkan fungsi JavaScript yang diinginkan untuk Service 3 di sini
+            alert("It's Dump LOL! >w<");
+        };
+    </script>
+</body>
+</html>

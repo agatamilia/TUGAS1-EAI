@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text to Speech</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/text2speech.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Voice AI Converter</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('voice_list') }}">Voice List</a></li>
+                <li><a href="{{ url_for('text2speech') }}">Text 2 Voice</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1 class="title">Text to Speech</h1>
+
+    <form action="/text2speech" method="POST">
+        <label for="text">Enter text:</label><br>
+        <input type="text" id="text" name="text"><br><br>
+        
+        <label for="voice_id">Select voice:</label>
+        <select id="voice_id" name="voice_id">
+            {% for voice in voices %}
+            <option value="{{ voice['voice_id'] }}" {% if voice['voice_id'] == selected_voice %} selected {% endif %}>{{ voice['name'] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button class="convert-button" type="submit">Convert to Speech</button>
+    </form>
+
+    {% if success %}
+    <div class="audio-container">
+        <h2>Generated Audio:</h2>
+        <audio controls>
+            <source src="{{ url_for('static', filename='history/speech_' + timestamp + '.mp3') }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    {% endif %}
+
+    <footer>
+        <div class="container">
+            <p>© 2024 amilia agata & yoan nindita. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
